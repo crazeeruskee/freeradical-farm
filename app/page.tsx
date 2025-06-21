@@ -1,105 +1,130 @@
-import { Leaf, MapPin, Clock, Mail } from 'lucide-react'
+'use client'
+
+import Image from 'next/image'
+import { useState } from 'react'
 
 export default function Home() {
-  return (
-    <div 
-      className="min-h-screen bg-cover bg-center bg-no-repeat relative"
-      style={{
-        backgroundImage: `url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAH0AfQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACioKsUHFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUVRvrtxr20xhfEz9eqaIkFRRRW7ItH6hF7JzJmfJzlbZfJ8Pn')`,
-        backgroundColor: '#f0fdf4' // fallback color
-      }}
-    >
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-      
-      {/* Content */}
-      <div className="relative z-10">
-        {/* Header */}
-        <header className="p-6 text-center">
-          <h1 
-            className="text-6xl font-bold shadow-lg"
-            style={{
-              fontFamily: 'Courier New, monospace',
-              color: '#2d5a3d',
-              textShadow: '3px 3px 6px rgba(0,0,0,0.5)'
-            }}
-          >
-            Free Radical Farm
-          </h1>
-        </header>
+  const [email, setEmail] = useState('')
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
-      {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-6 py-12">
-        <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold text-green-800 mb-6">
-            Fresh Microgreens
-            <span className="block text-3xl text-green-600 mt-2">Coming Soon</span>
-          </h2>
-          <p className="text-xl text-green-700 max-w-2xl mx-auto">
-            Locally grown, nutrient-packed microgreens delivered fresh to your door. 
-            We're preparing something amazing for you!
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // For now, just show success message
+    // Later you'll connect this to your email service
+    console.log('Email submitted:', email)
+    setIsSubmitted(true)
+    setEmail('')
+  }
+
+  return (
+    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-green-900 to-slate-800 flex items-center justify-center p-4">
+      <div className="max-w-4xl mx-auto text-center">
+        {/* Hero Section */}
+        <div className="mb-8">
+          <h1 className="text-5xl md:text-7xl font-bold text-green-400 mb-4 font-mono tracking-wider">
+            freeradical.farm
+          </h1>
+          <p className="text-xl md:text-2xl text-green-300 mb-2 font-mono">
+            precision microgreens cultivation
+          </p>
+          <p className="text-sm md:text-base text-green-500 font-mono">
+            &gt; from freeradical.tech
           </p>
         </div>
 
-        {/* Hero Image Placeholder */}
-        <div className="relative mb-12">
-          <div className="bg-green-200 rounded-2xl h-96 flex items-center justify-center shadow-xl">
-            <div className="text-center">
-              <Leaf className="h-24 w-24 text-green-600 mx-auto mb-4" />
-              <p className="text-green-700 text-lg">Beautiful microgreens photo coming soon</p>
+        {/* Microgreens Photo */}
+        <div className="mb-8 relative">
+          <div className="relative w-full rounded-lg overflow-hidden border-2 border-green-400/30 shadow-2xl">
+            <Image 
+              src="/microgreens-hero.jpg" 
+              alt="Fresh microgreens from freeradical.farm"
+              width={800}
+              height={400}
+              className="w-full h-64 md:h-96 object-cover brightness-105 contrast-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10"></div>
+          </div>
+          <div className="absolute -bottom-2 -right-2 bg-green-400/90 text-black px-3 py-1 rounded font-mono text-sm">
+            batch_001.jpg
+          </div>
+        </div>
+
+        {/* Coming Soon Section */}
+        <div className="bg-slate-800/50 backdrop-blur-sm border border-green-400/30 rounded-lg shadow-2xl p-8 mb-8">
+          <h2 className="text-3xl font-bold text-green-400 mb-4 font-mono">
+            &gt; system.status: developing
+          </h2>
+          <p className="text-lg text-green-200 mb-6 font-mono leading-relaxed">
+            Building automated cultivation systems.<br/>
+            Online ordering & subscriptions coming soon.
+          </p>
+          
+          {/* Email Signup */}
+          <div className="max-w-md mx-auto">
+            <h3 className="text-xl font-semibold text-green-300 mb-4 font-mono">
+              &gt; join beta program
+            </h3>
+            
+            {isSubmitted ? (
+              <div className="bg-green-400/20 border border-green-400 text-green-300 px-4 py-3 rounded font-mono">
+                &gt; email registered. standby for updates.
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="user@domain.com"
+                  required
+                  className="flex-1 px-4 py-2 bg-slate-900/50 border border-green-400/50 rounded text-green-300 placeholder-green-500/50 focus:outline-none focus:border-green-400 focus:ring-1 focus:ring-green-400 font-mono"
+                />
+                <button
+                  type="submit"
+                  className="bg-green-400 text-black px-6 py-2 rounded hover:bg-green-300 transition-colors font-mono font-bold"
+                >
+                  &gt; EXEC
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+
+        {/* Farmers Market Info */}
+        <div className="bg-slate-800/50 backdrop-blur-sm border border-green-400/30 rounded-lg shadow-2xl p-8">
+          <h2 className="text-2xl font-bold text-green-400 mb-4 font-mono">
+            &gt; current_location: farmers_market
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6 text-left">
+            <div>
+              <h3 className="font-semibold text-green-300 mb-2 font-mono">&gt; schedule.active</h3>
+              <p className="text-green-200 font-mono leading-relaxed">
+                saturdays: 08:00 - 13:00<br />
+                local_farmers_market<br />
+                [update with your coordinates]
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-green-300 mb-2 font-mono">&gt; inventory.current</h3>
+              <p className="text-green-200 font-mono leading-relaxed">
+                • microgreens.fresh<br />
+                • vegetables.seasonal<br />
+                • herbs.specialty
+              </p>
             </div>
           </div>
-        </div>
-
-        {/* Info Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          <div className="bg-white rounded-xl p-6 shadow-lg">
-            <MapPin className="h-12 w-12 text-green-600 mb-4" />
-            <h3 className="text-xl font-semibold text-green-800 mb-2">Local Farmers Market</h3>
-            <p className="text-green-600">Find us at your neighborhood farmers market every weekend</p>
-          </div>
           
-          <div className="bg-white rounded-xl p-6 shadow-lg">
-            <Leaf className="h-12 w-12 text-green-600 mb-4" />
-            <h3 className="text-xl font-semibold text-green-800 mb-2">Fresh & Organic</h3>
-            <p className="text-green-600">Grown with care using sustainable, organic practices</p>
-          </div>
-          
-          <div className="bg-white rounded-xl p-6 shadow-lg">
-            <Clock className="h-12 w-12 text-green-600 mb-4" />
-            <h3 className="text-xl font-semibold text-green-800 mb-2">Harvest to Table</h3>
-            <p className="text-green-600">Delivered within hours of harvest for maximum freshness</p>
+          {/* Tech Connection */}
+          <div className="mt-6 pt-6 border-t border-green-400/30">
+            <p className="text-green-400/80 font-mono text-sm">
+              &gt; powered by automation research @ 
+              <a href="https://freeradical.tech" className="text-green-300 hover:text-green-200 ml-1">
+                freeradical.tech
+              </a>
+            </p>
           </div>
         </div>
-
-        {/* Email Signup */}
-        <div className="bg-white rounded-2xl p-8 shadow-xl text-center">
-          <Mail className="h-12 w-12 text-green-600 mx-auto mb-4" />
-          <h3 className="text-2xl font-bold text-green-800 mb-4">Get Notified When We Launch</h3>
-          <p className="text-green-600 mb-6">Be the first to know when fresh microgreens are available for delivery</p>
-          
-          <form className="max-w-md mx-auto">
-            <div className="flex gap-3">
-              <input 
-                type="email" 
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-              />
-              <button 
-                type="submit"
-                className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-semibold"
-              >
-                Notify Me
-              </button>
-            </div>
-          </form>
-        </div>
-      </main>
-
-      {/* Footer */}
-      <footer className="text-center py-8 text-green-600">
-        <p>&copy; 2025 Free Radical Farm. Growing fresh, growing local.</p>
-      </footer>
-    </div>
+      </div>
+    </main>
   )
 }
