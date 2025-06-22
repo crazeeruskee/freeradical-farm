@@ -36,7 +36,7 @@ export default function Home() {
            🚧 Website under construction - more coming soon! 🚧
         </p>
 
-
+<!--
         {/* Market Information */}
         <h1 className="text-xl text-green-700 mb-6 leading-relaxed"
            style={{
@@ -75,7 +75,8 @@ export default function Home() {
           >
             Follow us on Instagram
           </a>
-  */      </div>
+        </div>
+-->
       </div>
     </div>
   )
