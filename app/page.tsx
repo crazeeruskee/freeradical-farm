@@ -21,7 +21,7 @@ export default function Home() {
           FREE RADICAL FARM
         </h1>
 
-        <p> Fresh Microgreens, Grown Locally in East Austin</p>
+/*        <p> Fresh Microgreens, Grown Locally in East Austin</p>
 
         {/* Construction Message */}
         <p className="text-green-600 text-lg"
@@ -75,7 +75,7 @@ export default function Home() {
           >
             Follow us on Instagram
           </a>
-        </div>
+  */      </div>
       </div>
     </div>
   )
