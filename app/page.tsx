@@ -26,7 +26,7 @@ export default function Home() {
         {/* Construction Message */}
         <p className="text-green-600 text-lg"
             style={{
-              fontFamily: 'Roboto, monospace',
+              //fontFamily: 'Roboto, monospace',
               fontSize: 'clamp(2rem, 5vw, 1.5rem)', // Responsive sizing
               //fontWeight: 'bold',
               color: '#FFAA55',
@@ -40,7 +40,7 @@ export default function Home() {
         {/* Market Information */}
         <h1 className="text-xl text-green-700 mb-6 leading-relaxed"
            style={{
-              fontFamily: 'Sans Serrif, monospace',
+              //fontFamily: 'Sans Serrif, monospace',
               fontSize: 'clamp(.8rem, 3vw, 1rem)', // Responsive sizing
               //fontWeight: 'bold',
               color: '#FF55CC',
@@ -60,7 +60,7 @@ export default function Home() {
         {/* Instagram Link */}
         <div className="mb-8"
           style={{
-              fontFamily: 'Roboto, monospace',
+              //fontFamily: 'Roboto, monospace',
               fontSize: 'clamp(1.5rem, 5vw, 1.5rem)', // Responsive sizing
               //fontWeight: 'bold',
               color: '#FFAA55',
