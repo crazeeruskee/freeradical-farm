@@ -73,7 +73,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="text-green-700 hover:text-green-800 text-lg underline transition-colors"
           >
-            Follow us on Instagram
+            Follow us on Instagram!
           </a>
         </div>
       </div>

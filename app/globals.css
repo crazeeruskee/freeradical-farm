@@ -2,7 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/*
 <html>
   <head>
     <style>
@@ -12,7 +12,7 @@
     </style>
   </head>
 <body>
-
+*/
 @layer base {
   html {
     font-family: 'Inter', system-ui, sans-serif;
