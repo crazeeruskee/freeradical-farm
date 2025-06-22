@@ -3,16 +3,26 @@
 @tailwind components;
 @tailwind utilities;
 
+<html>
+  <head>
+    <style>
+      h1 {text-align: center;}
+      p {text-align: center;}
+      div {text-align: center;}
+    </style>
+  </head>
+<body>
+
 @layer base {
   html {
     font-family: 'Inter', system-ui, sans-serif;
   }
-  
+
   body {
-    background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #f0fdfa 100%);
+    background-color: #fefbf3; /* Less yellow, more white creamy color */
     min-height: 100vh;
   }
-  
+
   .font-mono {
     font-family: 'JetBrains Mono', monospace;
   }
@@ -22,11 +32,11 @@
   .btn-primary {
     @apply bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold shadow-md;
   }
-  
+
   .card {
     @apply bg-white/80 backdrop-blur-sm border-2 border-green-200 rounded-xl shadow-lg p-6;
   }
-  
+
   .market-card {
     @apply bg-green-50 p-6 rounded-lg border border-green-200;
   }
