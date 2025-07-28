@@ -7,7 +7,7 @@ export default function Home() {
   const [isMobile, setIsMobile] = useState(false)
   const [isNavVisible, setIsNavVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
-  const [expandedCard, setExpandedCard] = useState(null)
+  const [expandedCard, setExpandedCard] = useState<string | null>(null)
 
   useEffect(() => {
     const checkMobile = () => {
