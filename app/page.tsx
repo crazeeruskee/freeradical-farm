@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -495,370 +496,328 @@ export default function Home() {
             Our Microgreens
           </h2>
           
-          {/* Varieties Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          {/* DEBUG: Forced 3-column grid with explicit styling */}
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '24px',
+            marginBottom: '32px'
+          }}>
+            
             {/* Triton Radish */}
-            <div className="bg-white border-2 border-green-200 rounded-lg overflow-hidden cursor-pointer"
-                 style={{ boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)' }}
-                 onClick={() => setExpandedCard(expandedCard === 'triton' ? null : 'triton')}>
-              <div className="h-48 bg-gradient-to-br from-purple-200 to-green-200 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-4xl mb-2">🌱</div>
-                  <p className="text-green-700 font-mono">Add your photo here</p>
-                </div>
+            <div 
+              style={{
+                backgroundColor: 'white',
+                border: '2px solid #bbf7d0',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                cursor: 'pointer',
+                boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)',
+                transition: 'all 0.2s'
+              }}
+              onClick={() => {
+                console.log('Triton clicked!')
+                setExpandedCard(expandedCard === 'triton' ? null : 'triton')
+              }}
+              onMouseOver={(e) => e.currentTarget.style.borderColor = '#4ade80'}
+              onMouseOut={(e) => e.currentTarget.style.borderColor = '#bbf7d0'}
+            >
+              <div style={{ 
+                aspectRatio: '1/1', 
+                overflow: 'hidden',
+                background: 'linear-gradient(to bottom right, #e9d5ff, #bbf7d0)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+              <div style={{ aspectRatio: '1/1', overflow: 'hidden' }}>
+                <Image 
+                  src="/triton_radish.png"
+                  alt="Triton Radish Microgreens"
+                  width={300}
+                  height={300}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
-              <div className="p-4">
-                <h3 className="text-xl font-bold text-green-800 mb-2">Triton Radish</h3>
-                <p className="text-green-600 text-sm">Peppery • Purple stems • Bold flavor</p>
-                <p className="text-green-500 text-xs mt-2">Click to learn more →</p>
+              </div>
+              <div style={{ padding: '16px', textAlign: 'center' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: '#166534' }}>Triton Radish</h3>
               </div>
             </div>
 
             {/* Waltham Broccoli */}
-            <div className="bg-white border-2 border-green-200 rounded-lg overflow-hidden cursor-pointer"
-                 style={{ boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)' }}
-                 onClick={() => setExpandedCard(expandedCard === 'broccoli' ? null : 'broccoli')}>
-              <div className="h-48 bg-gradient-to-br from-green-200 to-emerald-200 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-4xl mb-2">🥦</div>
-                  <p className="text-green-700 font-mono">Add your photo here</p>
-                </div>
+            <div 
+              style={{
+                backgroundColor: 'white',
+                border: '2px solid #bbf7d0',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                cursor: 'pointer',
+                boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)',
+                transition: 'all 0.2s'
+              }}
+              onClick={() => {
+                console.log('Broccoli clicked!')
+                setExpandedCard(expandedCard === 'broccoli' ? null : 'broccoli')
+              }}
+              onMouseOver={(e) => e.currentTarget.style.borderColor = '#4ade80'}
+              onMouseOut={(e) => e.currentTarget.style.borderColor = '#bbf7d0'}
+            >
+              <div style={{ aspectRatio: '1/1', overflow: 'hidden' }}>
+                <Image 
+                  src="/broccoli_internet_placeholder.jpg"
+                  alt="Waltham Broccoli Microgreens"
+                  width={300}
+                  height={300}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
-              <div className="p-4">
-                <h3 className="text-xl font-bold text-green-800 mb-2">Waltham Broccoli</h3>
-                <p className="text-green-600 text-sm">Mild • Tender • Nutritious</p>
-                <p className="text-green-500 text-xs mt-2">Click to learn more →</p>
+              <div style={{ padding: '16px', textAlign: 'center' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: '#166534' }}>Waltham Broccoli</h3>
               </div>
             </div>
 
             {/* Red Rambo Radish */}
-            <div className="bg-white border-2 border-green-200 rounded-lg overflow-hidden cursor-pointer"
-                 style={{ boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)' }}
-                 onClick={() => setExpandedCard(expandedCard === 'rambo' ? null : 'rambo')}>
-              <div className="h-48 bg-gradient-to-br from-red-200 to-pink-200 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-4xl mb-2">🌶️</div>
-                  <p className="text-green-700 font-mono">Add your photo here</p>
-                </div>
+            <div 
+              style={{
+                backgroundColor: 'white',
+                border: '2px solid #bbf7d0',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                cursor: 'pointer',
+                boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)',
+                transition: 'all 0.2s'
+              }}
+              onClick={() => {
+                console.log('Red Rambo clicked!')
+                setExpandedCard(expandedCard === 'rambo' ? null : 'rambo')
+              }}
+              onMouseOver={(e) => e.currentTarget.style.borderColor = '#4ade80'}
+              onMouseOut={(e) => e.currentTarget.style.borderColor = '#bbf7d0'}
+            >
+              <div style={{ aspectRatio: '1/1', overflow: 'hidden' }}>
+                <Image 
+                  src="/red_rambo_radish.png"
+                  alt="Red Rambo Radish"
+                  width={300}
+                  height={300}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
-              <div className="p-4">
-                <h3 className="text-xl font-bold text-green-800 mb-2">Red Rambo Radish</h3>
-                <p className="text-green-600 text-sm">Spicy • Red stems • Intense heat</p>
-                <p className="text-green-500 text-xs mt-2">Click to learn more →</p>
+              <div style={{ padding: '16px', textAlign: 'center' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: '#166534' }}>Red Rambo Radish</h3>
               </div>
             </div>
 
             {/* Swiss Chard */}
-            <div className="bg-white border-2 border-green-200 rounded-lg overflow-hidden cursor-pointer"
-                 style={{ boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)' }}
-                 onClick={() => setExpandedCard(expandedCard === 'chard' ? null : 'chard')}>
-              <div className="h-48 bg-gradient-to-br from-green-200 to-yellow-200 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-4xl mb-2">🍃</div>
-                  <p className="text-green-700 font-mono">Add your photo here</p>
-                </div>
+            <div 
+              style={{
+                backgroundColor: 'white',
+                border: '2px solid #bbf7d0',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                cursor: 'pointer',
+                boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)',
+                transition: 'all 0.2s'
+              }}
+              onClick={() => {
+                console.log('Swiss Chard clicked!')
+                setExpandedCard(expandedCard === 'chard' ? null : 'chard')
+              }}
+              onMouseOver={(e) => e.currentTarget.style.borderColor = '#4ade80'}
+              onMouseOut={(e) => e.currentTarget.style.borderColor = '#bbf7d0'}
+            >
+              <div style={{ aspectRatio: '1/1', overflow: 'hidden' }}>
+                <Image 
+                  src="/swisschard_internet_placeholder.jpg"
+                  alt="Ruby Red Swiss Chard"
+                  width={300}
+                  height={300}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
-              <div className="p-4">
-                <h3 className="text-xl font-bold text-green-800 mb-2">Swiss Chard</h3>
-                <p className="text-green-600 text-sm">Earthy • Colorful • Sweet</p>
-                <p className="text-green-500 text-xs mt-2">Click to learn more →</p>
+              <div style={{ padding: '16px', textAlign: 'center' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: '#166534' }}>Ruby Red Swis Chard</h3>
               </div>
             </div>
 
             {/* Arugula */}
-            <div className="bg-white border-2 border-green-200 rounded-lg overflow-hidden cursor-pointer"
-                 style={{ boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)' }}
-                 onClick={() => setExpandedCard(expandedCard === 'arugula' ? null : 'arugula')}>
-              <div className="h-48 bg-gradient-to-br from-green-200 to-lime-200 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-4xl mb-2">🥬</div>
-                  <p className="text-green-700 font-mono">Add your photo here</p>
+            <div 
+              className="bg-white border-2 border-green-200 rounded-lg overflow-hidden cursor-pointer hover:border-green-400 transition-all duration-200"
+              style={{ boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)' }}
+              onClick={() => setExpandedCard(expandedCard === 'arugula' ? null : 'arugula')}
+            >
+              <div className="aspect-square overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-green-200 to-lime-200 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-4xl mb-2">🥬</div>
+                    <p className="text-green-700 font-mono text-sm">Add your photo</p>
+                  </div>
                 </div>
               </div>
-              <div className="p-4">
-                <h3 className="text-xl font-bold text-green-800 mb-2">Arugula</h3>
-                <p className="text-green-600 text-sm">Peppery • Sophisticated • Classic</p>
-                <p className="text-green-500 text-xs mt-2">Click to learn more →</p>
+              <div className="p-4 text-center">
+                <h3 className="text-lg font-bold text-green-800">Arugula</h3>
               </div>
             </div>
 
             {/* Cilantro */}
-            <div className="bg-white border-2 border-green-200 rounded-lg overflow-hidden cursor-pointer"
-                 style={{ boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)' }}
-                 onClick={() => setExpandedCard(expandedCard === 'cilantro' ? null : 'cilantro')}>
-              <div className="h-48 bg-gradient-to-br from-green-200 to-emerald-200 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-4xl mb-2">🌿</div>
-                  <p className="text-green-700 font-mono">Add your photo here</p>
+            <div 
+              className="bg-white border-2 border-green-200 rounded-lg overflow-hidden cursor-pointer hover:border-green-400 transition-all duration-200"
+              style={{ boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)' }}
+              onClick={() => setExpandedCard(expandedCard === 'cilantro' ? null : 'cilantro')}
+            >
+              <div className="aspect-square overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-green-200 to-emerald-200 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-4xl mb-2">🌿</div>
+                    <p className="text-green-700 font-mono text-sm">Add your photo</p>
+                  </div>
                 </div>
               </div>
-              <div className="p-4">
-                <h3 className="text-xl font-bold text-green-800 mb-2">Cilantro</h3>
-                <p className="text-green-600 text-sm">Fresh • Bright • Herbal</p>
-                <p className="text-green-500 text-xs mt-2">Click to learn more →</p>
+              <div className="p-4 text-center">
+                <h3 className="text-lg font-bold text-green-800">Cilantro</h3>
               </div>
             </div>
 
             {/* Purple Kohlrabi */}
-            <div className="bg-white border-2 border-green-200 rounded-lg overflow-hidden cursor-pointer"
-                 style={{ boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)' }}
-                 onClick={() => setExpandedCard(expandedCard === 'kohlrabi' ? null : 'kohlrabi')}>
-              <div className="h-48 bg-gradient-to-br from-purple-200 to-violet-200 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-4xl mb-2">💜</div>
-                  <p className="text-green-700 font-mono">Add your photo here</p>
+            <div 
+              className="bg-white border-2 border-green-200 rounded-lg overflow-hidden cursor-pointer hover:border-green-400 transition-all duration-200"
+              style={{ boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)' }}
+              onClick={() => setExpandedCard(expandedCard === 'kohlrabi' ? null : 'kohlrabi')}
+            >
+              <div className="aspect-square overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-purple-200 to-violet-200 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-4xl mb-2">💜</div>
+                    <p className="text-green-700 font-mono text-sm">Add your photo</p>
+                  </div>
                 </div>
               </div>
-              <div className="p-4">
-                <h3 className="text-xl font-bold text-green-800 mb-2">Purple Kohlrabi</h3>
-                <p className="text-green-600 text-sm">Mild • Purple-tinted • Unique</p>
-                <p className="text-green-500 text-xs mt-2">Click to learn more →</p>
+              <div className="p-4 text-center">
+                <h3 className="text-lg font-bold text-green-800">Purple Kohlrabi</h3>
+              </div>
+            </div>
+
+            {/* Add 2 more placeholder cards to make a nice 3x3 grid */}
+            <div 
+              className="bg-white border-2 border-green-200 rounded-lg overflow-hidden opacity-50"
+              style={{ boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)' }}
+            >
+              <div className="aspect-square overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-gray-100 to-green-100 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-4xl mb-2">🌱</div>
+                    <p className="text-green-700 font-mono text-sm">More varieties<br />coming soon!</p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-4 text-center">
+                <h3 className="text-lg font-bold text-green-600">More Varieties</h3>
+              </div>
+            </div>
+
+            <div 
+              className="bg-white border-2 border-green-200 rounded-lg overflow-hidden opacity-50"
+              style={{ boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)' }}
+            >
+              <div className="aspect-square overflow-hidden">
+                <div className="w-full h-full bg-gradient-to-br from-gray-100 to-green-100 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-4xl mb-2">🌿</div>
+                    <p className="text-green-700 font-mono text-sm">Special<br />seasonal crops</p>
+                  </div>
+                </div>
+              </div>
+              <div className="p-4 text-center">
+                <h3 className="text-lg font-bold text-green-600">Seasonal Specials</h3>
               </div>
             </div>
           </div>
 
-          {/* Expanded Card Details */}
+          {/* Expanded Details - Shows Below Grid */}
           {expandedCard && (
-            <div className="bg-white border-2 border-green-200 rounded-lg p-8 mb-8"
-                 style={{ boxShadow: '6px 6px 0px rgba(34, 197, 94, 0.2)' }}>
-              <button 
-                onClick={() => setExpandedCard(null)}
-                className="float-right text-green-600 hover:text-green-800 text-2xl"
-              >
-                ×
-              </button>
+            <div className="bg-white border-2 border-green-400 rounded-lg p-8 mb-8 animate-in slide-in-from-top duration-300"
+                 style={{ boxShadow: '6px 6px 0px rgba(34, 197, 94, 0.3)' }}>
+              <div className="flex justify-between items-start mb-4">
+                <h3 className="text-2xl font-bold text-green-800">
+                  {expandedCard === 'triton' && 'Triton Radish Microgreens'}
+                  {expandedCard === 'broccoli' && 'Waltham Broccoli Microgreens'}
+                  {expandedCard === 'rambo' && 'Red Rambo Radish Microgreens'}
+                  {expandedCard === 'chard' && 'Swiss Chard Microgreens'}
+                  {expandedCard === 'arugula' && 'Arugula Microgreens'}
+                  {expandedCard === 'cilantro' && 'Cilantro Microgreens'}
+                  {expandedCard === 'kohlrabi' && 'Purple Kohlrabi Microgreens'}
+                </h3>
+                <button 
+                  onClick={() => setExpandedCard(null)}
+                  className="text-green-600 hover:text-green-800 text-3xl font-bold leading-none"
+                >
+                  ×
+                </button>
+              </div>
               
+              {/* Content for each variety */}
               {expandedCard === 'triton' && (
-                <div>
-                  <h3 className="text-2xl font-bold text-green-800 mb-4">Triton Radish Microgreens</h3>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold text-green-700 mb-2">Flavor Profile</h4>
-                      <p className="text-green-600 mb-4">Intense peppery kick with a clean, crisp finish. The purple stems add visual appeal while delivering a bold radish flavor that's more concentrated than mature radishes.</p>
-                      
-                      <h4 className="font-semibold text-green-700 mb-2">Health Benefits</h4>
-                      <ul className="text-green-600 space-y-1">
-                        <li>• High in vitamin C and antioxidants</li>
-                        <li>• Contains glucosinolates for immune support</li>
-                        <li>• Rich in folate and vitamin K</li>
-                        <li>• Natural detoxification properties</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-green-700 mb-2">Culinary Uses</h4>
-                      <ul className="text-green-600 space-y-1">
-                        <li>• Perfect for salad garnishes</li>
-                        <li>• Adds punch to sandwiches and wraps</li>
-                        <li>• Beautiful topping for soups</li>
-                        <li>• Elevates avocado toast</li>
-                        <li>• Great in grain bowls</li>
-                      </ul>
-                      
-                      <h4 className="font-semibold text-green-700 mb-2 mt-4">Storage</h4>
-                      <p className="text-green-600">Keep refrigerated in container. Best consumed within 7-10 days for optimal flavor and nutrition.</p>
-                    </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-semibold text-green-700 mb-2">Flavor Profile</h4>
+                    <p className="text-green-600 mb-4">Intense peppery kick with a clean, crisp finish. The purple stems add visual appeal while delivering a bold radish flavor that's more concentrated than mature radishes.</p>
+                    
+                    <h4 className="font-semibold text-green-700 mb-2">Health Benefits</h4>
+                    <ul className="text-green-600 space-y-1">
+                      <li>• High in vitamin C and antioxidants</li>
+                      <li>• Contains glucosinolates for immune support</li>
+                      <li>• Rich in folate and vitamin K</li>
+                      <li>• Natural detoxification properties</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-green-700 mb-2">Culinary Uses</h4>
+                    <ul className="text-green-600 space-y-1">
+                      <li>• Perfect for salad garnishes</li>
+                      <li>• Adds punch to sandwiches and wraps</li>
+                      <li>• Beautiful topping for soups</li>
+                      <li>• Elevates avocado toast</li>
+                      <li>• Great in grain bowls</li>
+                    </ul>
+                    
+                    <h4 className="font-semibold text-green-700 mb-2 mt-4">Storage</h4>
+                    <p className="text-green-600">Keep refrigerated in container. Best consumed within 7-10 days for optimal flavor and nutrition.</p>
                   </div>
                 </div>
               )}
 
               {expandedCard === 'broccoli' && (
-                <div>
-                  <h3 className="text-2xl font-bold text-green-800 mb-4">Waltham Broccoli Microgreens</h3>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold text-green-700 mb-2">Flavor Profile</h4>
-                      <p className="text-green-600 mb-4">Mild, fresh broccoli flavor with tender leaves and stems. Less intense than mature broccoli, making it perfect for those new to microgreens.</p>
-                      
-                      <h4 className="font-semibold text-green-700 mb-2">Health Benefits</h4>
-                      <ul className="text-green-600 space-y-1">
-                        <li>• Extremely high in sulforaphane</li>
-                        <li>• Powerful cancer-fighting compounds</li>
-                        <li>• Rich in vitamins A, C, and K</li>
-                        <li>• Supports heart health</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-green-700 mb-2">Culinary Uses</h4>
-                      <ul className="text-green-600 space-y-1">
-                        <li>• Excellent in smoothies</li>
-                        <li>• Perfect for cooking and sautéing</li>
-                        <li>• Great in omelets and scrambles</li>
-                        <li>• Adds nutrition to pasta dishes</li>
-                        <li>• Beautiful pizza topping</li>
-                      </ul>
-                      
-                      <h4 className="font-semibold text-green-700 mb-2 mt-4">Storage</h4>
-                      <p className="text-green-600">Refrigerate immediately. Can last up to 2 weeks with proper storage. Rinse gently before use.</p>
-                    </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-semibold text-green-700 mb-2">Flavor Profile</h4>
+                    <p className="text-green-600 mb-4">Mild, fresh broccoli flavor with tender leaves and stems. Less intense than mature broccoli, making it perfect for those new to microgreens.</p>
+                    
+                    <h4 className="font-semibold text-green-700 mb-2">Health Benefits</h4>
+                    <ul className="text-green-600 space-y-1">
+                      <li>• Extremely high in sulforaphane</li>
+                      <li>• Powerful cancer-fighting compounds</li>
+                      <li>• Rich in vitamins A, C, and K</li>
+                      <li>• Supports heart health</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-green-700 mb-2">Culinary Uses</h4>
+                    <ul className="text-green-600 space-y-1">
+                      <li>• Excellent in smoothies</li>
+                      <li>• Perfect for cooking and sautéing</li>
+                      <li>• Great in omelets and scrambles</li>
+                      <li>• Adds nutrition to pasta dishes</li>
+                      <li>• Beautiful pizza topping</li>
+                    </ul>
+                    
+                    <h4 className="font-semibold text-green-700 mb-2 mt-4">Storage</h4>
+                    <p className="text-green-600">Refrigerate immediately. Can last up to 2 weeks with proper storage. Rinse gently before use.</p>
                   </div>
                 </div>
               )}
 
-              {/* Add other variety details... */}
-              {expandedCard === 'rambo' && (
-                <div>
-                  <h3 className="text-2xl font-bold text-green-800 mb-4">Red Rambo Radish Microgreens</h3>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold text-green-700 mb-2">Flavor Profile</h4>
-                      <p className="text-green-600 mb-4">Fiery hot with beautiful red stems. The most intense variety we grow - a little goes a long way!</p>
-                      
-                      <h4 className="font-semibold text-green-700 mb-2">Health Benefits</h4>
-                      <ul className="text-green-600 space-y-1">
-                        <li>• High in anthocyanins (red pigments)</li>
-                        <li>• Powerful anti-inflammatory properties</li>
-                        <li>• Supports cardiovascular health</li>
-                        <li>• Rich in vitamin C</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-green-700 mb-2">Culinary Uses</h4>
-                      <ul className="text-green-600 space-y-1">
-                        <li>• Stunning salad accent</li>
-                        <li>• Spicy taco garnish</li>
-                        <li>• Adds heat to bloody marys</li>
-                        <li>• Beautiful cocktail garnish</li>
-                        <li>• Elevates cheese plates</li>
-                      </ul>
-                      
-                      <h4 className="font-semibold text-green-700 mb-2 mt-4">Storage</h4>
-                      <p className="text-green-600">Best consumed fresh. Store refrigerated and use within 5-7 days for peak color and heat.</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {expandedCard === 'chard' && (
-                <div>
-                  <h3 className="text-2xl font-bold text-green-800 mb-4">Swiss Chard Microgreens</h3>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold text-green-700 mb-2">Flavor Profile</h4>
-                      <p className="text-green-600 mb-4">Earthy and slightly sweet with colorful stems ranging from white to pink to yellow. Mild enough for children yet complex for gourmet dishes.</p>
-                      
-                      <h4 className="font-semibold text-green-700 mb-2">Health Benefits</h4>
-                      <ul className="text-green-600 space-y-1">
-                        <li>• Extremely high in vitamin K</li>
-                        <li>• Rich in magnesium and potassium</li>
-                        <li>• Contains betalains for detox support</li>
-                        <li>• High in iron and calcium</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-green-700 mb-2">Culinary Uses</h4>
-                      <ul className="text-green-600 space-y-1">
-                        <li>• Beautiful in mixed salads</li>
-                        <li>• Perfect for kids' meals</li>
-                        <li>• Great in grain bowls</li>
-                        <li>• Adds color to omelets</li>
-                        <li>• Lovely soup garnish</li>
-                      </ul>
-                      
-                      <h4 className="font-semibold text-green-700 mb-2 mt-4">Storage</h4>
-                      <p className="text-green-600">Hardy variety that stores well. Refrigerate and use within 10-14 days. Colors may intensify over time.</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {expandedCard === 'arugula' && (
-                <div>
-                  <h3 className="text-2xl font-bold text-green-800 mb-4">Arugula Microgreens</h3>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold text-green-700 mb-2">Flavor Profile</h4>
-                      <p className="text-green-600 mb-4">Classic peppery bite with nutty undertones. The sophisticated choice for restaurant-quality dishes. Less intense than mature arugula.</p>
-                      
-                      <h4 className="font-semibold text-green-700 mb-2">Health Benefits</h4>
-                      <ul className="text-green-600 space-y-1">
-                        <li>• High in calcium and vitamin K</li>
-                        <li>• Rich in folate and vitamin A</li>
-                        <li>• Contains glucosinolates</li>
-                        <li>• Natural source of nitrates</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-green-700 mb-2">Culinary Uses</h4>
-                      <ul className="text-green-600 space-y-1">
-                        <li>• Classic Caesar salad upgrade</li>
-                        <li>• Perfect pizza topping</li>
-                        <li>• Elevates pasta dishes</li>
-                        <li>• Beautiful on flatbreads</li>
-                        <li>• Essential for Italian cuisine</li>
-                      </ul>
-                      
-                      <h4 className="font-semibold text-green-700 mb-2 mt-4">Storage</h4>
-                      <p className="text-green-600">Store in refrigerator. Best used within 7-10 days. May become more peppery with age.</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {expandedCard === 'cilantro' && (
-                <div>
-                  <h3 className="text-2xl font-bold text-green-800 mb-4">Cilantro Microgreens</h3>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold text-green-700 mb-2">Flavor Profile</h4>
-                      <p className="text-green-600 mb-4">Fresh, bright cilantro flavor that's more concentrated than mature leaves. Perfect for those who love cilantro or want to try it in a milder form.</p>
-                      
-                      <h4 className="font-semibold text-green-700 mb-2">Health Benefits</h4>
-                      <ul className="text-green-600 space-y-1">
-                        <li>• Natural detoxification properties</li>
-                        <li>• Rich in vitamins A, C, and K</li>
-                        <li>• Contains antioxidants</li>
-                        <li>• May help with heavy metal removal</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-green-700 mb-2">Culinary Uses</h4>
-                      <ul className="text-green-600 space-y-1">
-                        <li>• Perfect for Mexican dishes</li>
-                        <li>• Essential for Asian cuisine</li>
-                        <li>• Great in salsas and guacamole</li>
-                        <li>• Beautiful curry garnish</li>
-                        <li>• Adds freshness to soups</li>
-                      </ul>
-                      
-                      <h4 className="font-semibold text-green-700 mb-2 mt-4">Storage</h4>
-                      <p className="text-green-600">Best used fresh for maximum flavor. Refrigerate and use within 5-7 days. Flavor diminishes quickly.</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {expandedCard === 'kohlrabi' && (
-                <div>
-                  <h3 className="text-2xl font-bold text-green-800 mb-4">Purple Kohlrabi Microgreens</h3>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold text-green-700 mb-2">Flavor Profile</h4>
-                      <p className="text-green-600 mb-4">Mild, sweet cabbage-like flavor with stunning purple-tinted leaves. One of our most unique and visually striking varieties.</p>
-                      
-                      <h4 className="font-semibold text-green-700 mb-2">Health Benefits</h4>
-                      <ul className="text-green-600 space-y-1">
-                        <li>• High in vitamin C and fiber</li>
-                        <li>• Contains anthocyanins</li>
-                        <li>• Rich in potassium</li>
-                        <li>• Natural source of antioxidants</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-green-700 mb-2">Culinary Uses</h4>
-                      <ul className="text-green-600 space-y-1">
-                        <li>• Stunning salad centerpiece</li>
-                        <li>• Beautiful garnish for white plates</li>
-                        <li>• Perfect for photography</li>
-                        <li>• Great in slaws and wraps</li>
-                        <li>• Adds color to sandwiches</li>
-                      </ul>
-                      
-                      <h4 className="font-semibold text-green-700 mb-2 mt-4">Storage</h4>
-                      <p className="text-green-600">Purple color is most vibrant when fresh. Refrigerate and use within 7-10 days for best appearance.</p>
-                    </div>
-                  </div>
-                </div>
-              )}
+              {/* Add other variety details here as needed */}
             </div>
           )}
 
