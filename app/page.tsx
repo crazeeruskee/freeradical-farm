@@ -532,7 +532,7 @@ export default function Home() {
               }}>
               <div style={{ aspectRatio: '1/1', overflow: 'hidden' }}>
                 <Image 
-                  src="/triton_radish.png"
+                  src="/triton_radish_tray.png"
                   alt="Triton Radish Microgreens"
                   width={300}
                   height={300}
@@ -565,7 +565,7 @@ export default function Home() {
             >
               <div style={{ aspectRatio: '1/1', overflow: 'hidden' }}>
                 <Image 
-                  src="/broccoli_internet_placeholder.jpg"
+                  src="/broccoli_tray.png"
                   alt="Waltham Broccoli Microgreens"
                   width={300}
                   height={300}
@@ -609,6 +609,38 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Sunflower */}
+            <div 
+              style={{
+                backgroundColor: 'white',
+                border: '2px solid #bbf7d0',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                cursor: 'pointer',
+                boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)',
+                transition: 'all 0.2s'
+              }}
+              onClick={() => {
+                console.log('Sunflower clicked!')
+                setExpandedCard(expandedCard === 'sun' ? null : 'sun')
+              }}
+              onMouseOver={(e) => e.currentTarget.style.borderColor = '#4ade80'}
+              onMouseOut={(e) => e.currentTarget.style.borderColor = '#bbf7d0'}
+            >
+              <div style={{ aspectRatio: '1/1', overflow: 'hidden' }}>
+                <Image 
+                  src="/sunflower_tray.png"
+                  alt="Sunflower"
+                  width={300}
+                  height={300}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              </div>
+              <div style={{ padding: '16px', textAlign: 'center' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: '#166534' }}>Sunflower</h3>
+              </div>
+            </div>
+
             {/* Swiss Chard */}
             <div 
               style={{
@@ -629,7 +661,7 @@ export default function Home() {
             >
               <div style={{ aspectRatio: '1/1', overflow: 'hidden' }}>
                 <Image 
-                  src="/swisschard_internet_placeholder.jpg"
+                  src="/swisschard_internet_placeholder2.png"
                   alt="Ruby Red Swiss Chard"
                   width={300}
                   height={300}
@@ -643,79 +675,101 @@ export default function Home() {
 
             {/* Arugula */}
             <div 
-              className="bg-white border-2 border-green-200 rounded-lg overflow-hidden cursor-pointer hover:border-green-400 transition-all duration-200"
-              style={{ boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)' }}
-              onClick={() => setExpandedCard(expandedCard === 'arugula' ? null : 'arugula')}
+              style={{
+                backgroundColor: 'white',
+                border: '2px solid #bbf7d0',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                cursor: 'pointer',
+                boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)',
+                transition: 'all 0.2s'
+              }}
+              onClick={() => {
+                console.log('Arugula clicked!')
+                setExpandedCard(expandedCard === 'arugula' ? null : 'arugula')
+              }}
+              onMouseOver={(e) => e.currentTarget.style.borderColor = '#4ade80'}
+              onMouseOut={(e) => e.currentTarget.style.borderColor = '#bbf7d0'}
             >
-              <div className="aspect-square overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-green-200 to-lime-200 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-4xl mb-2">🥬</div>
-                    <p className="text-green-700 font-mono text-sm">Add your photo</p>
-                  </div>
-                </div>
+              <div style={{ aspectRatio: '1/1', overflow: 'hidden' }}>
+                <Image 
+                  src="/arugula_internet_placeholder2.png"
+                  alt="Arugula Microgreens"
+                  width={300}
+                  height={300}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
-              <div className="p-4 text-center">
-                <h3 className="text-lg font-bold text-green-800">Arugula</h3>
+              <div style={{ padding: '16px', textAlign: 'center' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: '#166534' }}>Arugula</h3>
               </div>
             </div>
 
             {/* Cilantro */}
             <div 
-              className="bg-white border-2 border-green-200 rounded-lg overflow-hidden cursor-pointer hover:border-green-400 transition-all duration-200"
-              style={{ boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)' }}
-              onClick={() => setExpandedCard(expandedCard === 'cilantro' ? null : 'cilantro')}
+              style={{
+                backgroundColor: 'white',
+                border: '2px solid #bbf7d0',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                cursor: 'pointer',
+                boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)',
+                transition: 'all 0.2s'
+              }}
+              onClick={() => {
+                console.log('Cilantro clicked!')
+                setExpandedCard(expandedCard === 'cilantro' ? null : 'cilantro')
+              }}
+              onMouseOver={(e) => e.currentTarget.style.borderColor = '#4ade80'}
+              onMouseOut={(e) => e.currentTarget.style.borderColor = '#bbf7d0'}
             >
-              <div className="aspect-square overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-green-200 to-emerald-200 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-4xl mb-2">🌿</div>
-                    <p className="text-green-700 font-mono text-sm">Add your photo</p>
-                  </div>
-                </div>
+              <div style={{ aspectRatio: '1/1', overflow: 'hidden' }}>
+                <Image 
+                  src="/cilantro_internet_placeholder.jpg"
+                  alt="Cilantro Microgreens"
+                  width={300}
+                  height={300}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
-              <div className="p-4 text-center">
-                <h3 className="text-lg font-bold text-green-800">Cilantro</h3>
+              <div style={{ padding: '16px', textAlign: 'center' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: '#166534' }}>Cilantro</h3>
               </div>
             </div>
 
             {/* Purple Kohlrabi */}
             <div 
-              className="bg-white border-2 border-green-200 rounded-lg overflow-hidden cursor-pointer hover:border-green-400 transition-all duration-200"
-              style={{ boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)' }}
-              onClick={() => setExpandedCard(expandedCard === 'kohlrabi' ? null : 'kohlrabi')}
+              style={{
+                backgroundColor: 'white',
+                border: '2px solid #bbf7d0',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                cursor: 'pointer',
+                boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)',
+                transition: 'all 0.2s'
+              }}
+              onClick={() => {
+                console.log('Kohlrabi clicked!')
+                setExpandedCard(expandedCard === 'kohlrabi' ? null : 'kohlrabi')
+              }}
+              onMouseOver={(e) => e.currentTarget.style.borderColor = '#4ade80'}
+              onMouseOut={(e) => e.currentTarget.style.borderColor = '#bbf7d0'}
             >
-              <div className="aspect-square overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-purple-200 to-violet-200 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-4xl mb-2">💜</div>
-                    <p className="text-green-700 font-mono text-sm">Add your photo</p>
-                  </div>
-                </div>
+              <div style={{ aspectRatio: '1/1', overflow: 'hidden' }}>
+                <Image 
+                  src="/kohlrabi_internet_placeholder.jpg"
+                  alt="Purple Kohlrabi Microgreens"
+                  width={300}
+                  height={300}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
-              <div className="p-4 text-center">
-                <h3 className="text-lg font-bold text-green-800">Purple Kohlrabi</h3>
+              <div style={{ padding: '16px', textAlign: 'center' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: '#166534' }}>Purple Kohlrabi</h3>
               </div>
             </div>
 
-            {/* Add 2 more placeholder cards to make a nice 3x3 grid */}
-            <div 
-              className="bg-white border-2 border-green-200 rounded-lg overflow-hidden opacity-50"
-              style={{ boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)' }}
-            >
-              <div className="aspect-square overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-gray-100 to-green-100 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-4xl mb-2">🌱</div>
-                    <p className="text-green-700 font-mono text-sm">More varieties<br />coming soon!</p>
-                  </div>
-                </div>
-              </div>
-              <div className="p-4 text-center">
-                <h3 className="text-lg font-bold text-green-600">More Varieties</h3>
-              </div>
-            </div>
-
+            {/* Add placeholder seasonal card to make a nice 3x3 grid */}
             <div 
               className="bg-white border-2 border-green-200 rounded-lg overflow-hidden opacity-50"
               style={{ boxShadow: '4px 4px 0px rgba(34, 197, 94, 0.15)' }}
@@ -743,6 +797,7 @@ export default function Home() {
                   {expandedCard === 'triton' && 'Triton Radish Microgreens'}
                   {expandedCard === 'broccoli' && 'Waltham Broccoli Microgreens'}
                   {expandedCard === 'rambo' && 'Red Rambo Radish Microgreens'}
+                  {expandedCard === 'sun' && 'Sunflower Microgreens'}
                   {expandedCard === 'chard' && 'Swiss Chard Microgreens'}
                   {expandedCard === 'arugula' && 'Arugula Microgreens'}
                   {expandedCard === 'cilantro' && 'Cilantro Microgreens'}
@@ -782,7 +837,7 @@ export default function Home() {
                     </ul>
                     
                     <h4 className="font-semibold text-green-700 mb-2 mt-4">Storage</h4>
-                    <p className="text-green-600">Keep refrigerated in container. Best consumed within 7-10 days for optimal flavor and nutrition.</p>
+                    <p className="text-green-600">Refrigerate immediately. Can last up to 2 weeks with proper storage. Rinse gently before use.</p>
                   </div>
                 </div>
               )}
@@ -791,7 +846,7 @@ export default function Home() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-semibold text-green-700 mb-2">Flavor Profile</h4>
-                    <p className="text-green-600 mb-4">Mild, fresh broccoli flavor with tender leaves and stems. Less intense than mature broccoli, making it perfect for those new to microgreens.</p>
+                    <p className="text-green-600 mb-4">Creamy, nutty flavor with tender leaves and stems, almost cashew-like.</p>
                     
                     <h4 className="font-semibold text-green-700 mb-2">Health Benefits</h4>
                     <ul className="text-green-600 space-y-1">
@@ -805,14 +860,13 @@ export default function Home() {
                     <h4 className="font-semibold text-green-700 mb-2">Culinary Uses</h4>
                     <ul className="text-green-600 space-y-1">
                       <li>• Excellent in smoothies</li>
-                      <li>• Perfect for cooking and sautéing</li>
-                      <li>• Great in omelets and scrambles</li>
+                      <li>• Great on top of omelets and scrambles</li>
                       <li>• Adds nutrition to pasta dishes</li>
                       <li>• Beautiful pizza topping</li>
                     </ul>
                     
                     <h4 className="font-semibold text-green-700 mb-2 mt-4">Storage</h4>
-                    <p className="text-green-600">Refrigerate immediately. Can last up to 2 weeks with proper storage. Rinse gently before use.</p>
+                    <p className="text-green-600">Keep refrigerated in container. Best consumed within 7-10 days for optimal flavor and nutrition. Rinse gently before use.</p>
                   </div>
                 </div>
               )}
@@ -864,9 +918,23 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Boggy Creek */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-bold text-green-800 mb-4">Shop These Locations</h3>
+              <div className="bg-green-50 border border-green-200 rounded-lg p-6"
+                   style={{ boxShadow: '3px 3px 0px rgba(34, 197, 94, 0.1)' }}>
+                <p className="text-lg text-green-700 mb-2">
+                  <strong>Boggy Creek Farm</strong><br />
+                </p>
+                <p className="text-green-600">
+                  Open every Wednesday-Saturday, 8:00 AM - 1:00 PM
+                </p>
+              </div>
+            </div>
+
             {/* Coming Soon */}
             <div>
-              <h3 className="text-2xl font-bold text-green-800 mb-4">Online Ordering - Coming Soon!</h3>
+              <h3 className="text-2xl font-bold text-green-800 mb-4">Order Online [Coming Soon]</h3>
               <p className="text-lg text-green-700 mb-4">
                 We're working on home delivery and subscription services. 
                 Sign up above to be notified when we launch!
@@ -887,15 +955,6 @@ export default function Home() {
                style={{ boxShadow: '6px 6px 0px rgba(34, 197, 94, 0.2)' }}>
             
             <div className="grid md:grid-cols-3 gap-8">
-              {/* Phone */}
-              <div className="text-center">
-                <h3 className="text-xl font-semibold text-green-800 mb-3">Phone</h3>
-                <a href="tel:2012946434" 
-                   className="text-lg text-green-700 hover:text-green-800 underline">
-                  (201) 294-6434
-                </a>
-              </div>
-
               {/* Email */}
               <div className="text-center">
                 <h3 className="text-xl font-semibold text-green-800 mb-3">Email</h3>
